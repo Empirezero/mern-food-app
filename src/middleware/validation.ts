@@ -34,7 +34,7 @@ export const validateMyRestaurantRequest = [
     .withMessage("Delivery price must be a positive number"),
   body("estimatedDeliveryTime")
     .isInt({ min: 0 })
-    .withMessage("Estimated delivery time must be a postivie integar"),
+    .withMessage("Estimated delivery time must be a positive integer"),
   body("cuisines")
     .isArray()
     .withMessage("Cuisines must be an array")
