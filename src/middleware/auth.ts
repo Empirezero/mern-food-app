@@ -7,7 +7,7 @@ declare global{
   namespace Express{
     interface Request{
       userId:string;
-      auth0Id:string;
+      auth0Id:string; 
     }
   }
 }
@@ -19,7 +19,7 @@ export const jwtCheck = auth({
 });
 
 export const jwtParse = async(req: Request, res: Response, next: NextFunction)=>{
- //need to  get the access ten from the authorization
+ //need to  get the access token from the authorization
  //return status 401 that is unauthorized
   const { authorization } = req.headers;
 if(!authorization || !authorization?.startsWith("Bearer ")){

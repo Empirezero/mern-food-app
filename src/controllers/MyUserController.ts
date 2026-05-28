@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+ import { Request, Response } from "express";
 import User from "../models/user";
 
 const createCurrentUser = async (req: Request, res: Response) => {
@@ -56,7 +56,7 @@ const updateCurrentUser = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Error updating user" });
   }
 };
-
+//we are exporting the controller functions as an object so that we can import them in the routes file and use them as middleware for the routes
 export default {
     createCurrentUser,
     updateCurrentUser,
