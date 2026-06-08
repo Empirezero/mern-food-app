@@ -4,7 +4,7 @@ import cloudinary from "cloudinary";
 import mongoose from "mongoose";
 import Order from "../models/order";
 
-
+//controller for handling operations related to the restaurant owned by the authenticatd user
 const getMyRestaurant = async (req: Request, res: Response) => {
   try {
     const restaurant = await Restaurant.findOne({ user: req.userId });
@@ -17,10 +17,10 @@ const getMyRestaurant = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Error fetching restaurant" });
   }
 };
-
+//Create  new restaurant for the authenticat ed user
 const createMyRestaurant = async (req: Request, res: Response) => {
   try {
-    //check if user already has a restuarant
+    //check if user already has a restaurant
     const existingRestaurant = await Restaurant.findOne({ user: req.userId });
 
     if (existingRestaurant) {
